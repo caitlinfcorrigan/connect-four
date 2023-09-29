@@ -1,3 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: aquamarine;
+    /* viewport units - vh (viewport height), vw (v width), vmin */
+    height: 100vh;
+    margin: 0;
+    /* Setting body font applies to most things except buttons */
+    font-family: 'Roboto Condensed', sans-serif;
+    /* Turn the body into a flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    /* Sets font to 4% of whatever is on the page */
+    font-size: 4vmin;
+    color: darkblue;
+    letter-spacing: 1vmin;
+}
+
+h1 {
+    color: navy;
+    font-size: 3vmin;
+}
+
+#markers {
+    display: grid;
+    /* create the arrow markers indicating the columns of the board */
+    grid-template-columns: repeat(7, 10vmin);
+    /* add gap between columns */
+    gap: 1vmin;
+    margin-top: 1.5vmin;
+}
+
+/* target children of the markers id, which are the board headers/triangles*/
+#markers > div {
+    height: 10vmin;
+    /* border has to be half of column width for ?effect? */
+    border-width: 5vmin;
+    border-style: solid;
+    /* use transparent to create a triangle out of the rect. cell */
+    border-color: lightgray transparent transparent;
+    /* use transform animation to scale the triangles */
+    transform: scale(0.7);
+}
+
+/* increase the size of the triangles on hover */
+#markers > div:hover {
+    transform: scale(.9);
+    transition: transform 150ms ease-in;
+    border-top-color: darkgrey;
+}
+
+#board {
+    display: grid;
+    /* set the width of the 7 columns */
+    grid-template-columns: repeat(7, 10vmin);
+    /* set the width of the 6 rows */
+    grid-template-rows: repeat(6, 10vmin);
+    /* add gap between columns */
+    gap: 1vmin;
+    /* move the top row closer to triangles */
+    margin-top: -4vmin;
+}
+
+#board > div {
+    border-radius: 50%;
+    border: 0.1vmin solid lightgray;
+}
+
+button {
+    margin: 4vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    border: 0.1vmin solid gray;
+    color: black;
+}
+
+button:hover {
+    color: white;
+    background-color: gray;
 }
