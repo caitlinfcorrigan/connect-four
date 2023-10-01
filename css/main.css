@@ -23,7 +23,7 @@ header {
 }
 
 h1 {
-    color: navy;
+    color: darkblue;
     font-size: 3vmin;
 }
 
@@ -43,7 +43,7 @@ h1 {
     border-width: 5vmin;
     border-style: solid;
     /* use transparent to create a triangle out of the rect. cell */
-    border-color: lightgray transparent transparent;
+    border-color: lightblue transparent transparent;
     /* use transform animation to scale the triangles */
     transform: scale(0.7);
 }
@@ -52,7 +52,7 @@ h1 {
 #markers > div:hover {
     transform: scale(.9);
     transition: transform 150ms ease-in;
-    border-top-color: darkgrey;
+    border-top-color: darkblue
 }
 
 #board {
